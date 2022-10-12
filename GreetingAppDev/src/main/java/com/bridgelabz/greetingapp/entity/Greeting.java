@@ -1,10 +1,18 @@
 package com.bridgelabz.greetingapp.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Entity
 public class Greeting {
+    @Id
+    @Column(name = "id", nullable = false)
     private long id;
+    @Column(name = "message", nullable = false)
     private String message;
 
-    public Greeting(){}
+    public Greeting() {
+    }
 
     public Greeting(long id, String message) {
         this.id = id;
@@ -26,4 +34,5 @@ public class Greeting {
     public void setMessage(String message) {
         this.message = message;
     }
+
 }
